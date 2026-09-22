@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Reviews & Testimonials | Origins Realty Group — Santa Fe, NM</title>
+  <meta name="description" content="Read verified client reviews and testimonials for Origins Realty Group. Real experiences from buyers and sellers across Santa Fe and Northern New Mexico.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Luxury Neumorphic Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Lenis Smooth Scroll CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-[#EBE7DF] text-[#1F1F1F] selection:bg-[#B87333] selection:text-white">
+
+  <!-- =========================================================================
+       SUBPAGE NAVIGATION BAR
+       ========================================================================= -->
+  <header class="w-full pt-5 sm:pt-6 sticky top-0 z-40 transition-all duration-300">
+    <div class="container-luxury">
+      <nav id="main-navbar" class="w-full flex items-center justify-between px-6 sm:px-8 py-3.5 sm:py-4 rounded-full nav-floating-pill">
+        <!-- Logo -->
+        <a href="index.html" class="nav-logo text-[#1F1F1F] font-semibold text-xl sm:text-2xl tracking-wide select-none">
+          Origins Realty
+        </a>
+
+        <!-- Desktop Navigation Items -->
+        <div class="hidden lg:flex items-center space-x-7 xl:space-x-8">
+          <a href="index.html" class="nav-link text-[14px] font-normal text-stone-700 hover:text-stone-900 transition-colors">Home</a>
+          <a href="about.html" class="nav-link text-[14px] font-normal text-stone-700 hover:text-stone-900 transition-colors">About Us</a>
+          <a href="properties.html" class="nav-link text-[14px] font-normal text-stone-700 hover:text-stone-900 transition-colors">Properties</a>
+          <a href="communities.html" class="nav-link text-[14px] font-normal text-stone-700 hover:text-stone-900 transition-colors">Communities</a>
+          <a href="team.html" class="nav-link text-[14px] font-normal text-stone-700 hover:text-stone-900 transition-colors">Our Team</a>
+          <a href="testimonials.html" class="nav-link text-[14px] font-semibold text-[#B87333] border-b-2 border-[#B87333] pb-0.5">Reviews</a>
+          <a href="contact.html" class="nav-link text-[14px] font-normal text-stone-700 hover:text-stone-900 transition-colors">Contact</a>
+        </div>
+
+        <!-- Right-side Action: Schedule Consultation -->
+        <div class="hidden sm:flex items-center space-x-4">
+          <a href="#consultation-modal" class="nav-consult-btn inline-flex items-center gap-2 border border-stone-400 text-stone-900 text-[14px] font-normal px-5 py-2 rounded-full transition-all duration-300 hover:bg-[#1F1F1F] hover:text-white shadow-sm">
+            <span>Schedule Consultation</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button type="button" class="mobile-menu-btn open-drawer-btn lg:hidden text-stone-900 p-2 focus:outline-none" aria-label="Open Navigation">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       PAGE HEADER
+       ========================================================================= -->
+  <section class="pt-16 pb-12 text-center">
+    <div class="container-luxury">
+      <span class="text-xs uppercase tracking-[0.25em] font-semibold text-[#B87333] mb-3 inline-block">
+        Origins Realty Group • Client Acclaim
+      </span>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#1F1F1F] leading-tight mb-4">
+        Verified Reviews & Testimonials
+      </h1>
+      <p class="text-[#57544E] text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-light">
+        Nothing speaks louder than the words of our clients. Here is what buyers, sellers, and out-of-state investors say about working with Origins Realty Group.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       TESTIMONIALS GRID (TACTILE NEUMORPHIC QUOTE CARDS)
+       ========================================================================= -->
+  <section class="section-spacing pt-0">
+    <div class="container-luxury">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        
+        <!-- Review 1: Marissa Tapia's Dual Transaction -->
+        <div class="neu-flat p-8 rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C5A059] tracking-wider text-base">★★★★★</div>
+              <span class="neu-inset px-3 py-1 rounded-full text-[11px] font-semibold text-[#B87333]">Verified Sale & Purchase</span>
+            </div>
+            <blockquote class="text-lg text-[#1F1F1F] font-serif-luxury italic leading-relaxed mb-6">
+              "I worked with Marissa Tapia and had the absolute smoothest, most seamless experience selling my previous home and purchasing my new one. She made it happen with no complications!"
+            </blockquote>
+          </div>
+          <div class="pt-4 border-t border-black/5 flex items-center justify-between text-xs text-[#57544E]">
+            <div>
+              <strong class="text-[#1F1F1F] block text-sm">Concurrent Buyer & Seller</strong>
+              <span>Santa Fe, New Mexico</span>
+            </div>
+            <span class="text-[#7E7970] font-medium">Broker: Marissa Tapia</span>
+          </div>
+        </div>
+
+        <!-- Review 2: Olga C'de Baca - Out of State Client (Sold in 72 Hours) -->
+        <div class="neu-flat p-8 rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C5A059] tracking-wider text-base">★★★★★</div>
+              <span class="neu-inset px-3 py-1 rounded-full text-[11px] font-semibold text-[#B87333]">72-Hour Contract</span>
+            </div>
+            <blockquote class="text-lg text-[#1F1F1F] font-serif-luxury italic leading-relaxed mb-6">
+              "We had two excellent experiences with Olga. Since we lived out of state, she made the buying process seamless. When it was time to sell, the home sold in 72 hours!"
+            </blockquote>
+          </div>
+          <div class="pt-4 border-t border-black/5 flex items-center justify-between text-xs text-[#57544E]">
+            <div>
+              <strong class="text-[#1F1F1F] block text-sm">Out-of-State Relocation Clients</strong>
+              <span>Relocated to & from Santa Fe</span>
+            </div>
+            <span class="text-[#7E7970] font-medium">Broker: Olga C'de Baca</span>
+          </div>
+        </div>
+
+        <!-- Review 3: Natalie B. - Native Insight -->
+        <div class="neu-flat p-8 rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C5A059] tracking-wider text-base">★★★★★</div>
+              <span class="neu-inset px-3 py-1 rounded-full text-[11px] font-semibold text-[#B87333]">Historic Eastside Buyer</span>
+            </div>
+            <blockquote class="text-lg text-[#1F1F1F] font-serif-luxury italic leading-relaxed mb-6">
+              "Olga is one of the few REALTORS® in Santa Fe who is a true native. Extensive contacts, utmost integrity, and always looking out for our best interests."
+            </blockquote>
+          </div>
+          <div class="pt-4 border-t border-black/5 flex items-center justify-between text-xs text-[#57544E]">
+            <div>
+              <strong class="text-[#1F1F1F] block text-sm">Natalie B.</strong>
+              <span>Santa Fe Resident</span>
+            </div>
+            <span class="text-[#7E7970] font-medium">Broker: Olga C'de Baca</span>
+          </div>
+        </div>
+
+        <!-- Review 4: Dream Team Communication -->
+        <div class="neu-flat p-8 rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C5A059] tracking-wider text-base">★★★★★</div>
+              <span class="neu-inset px-3 py-1 rounded-full text-[11px] font-semibold text-[#B87333]">First-Time Buyer</span>
+            </div>
+            <blockquote class="text-lg text-[#1F1F1F] font-serif-luxury italic leading-relaxed mb-6">
+              "Working with their team was an absolute dream! Marissa was patient, communicative, and kept us informed every single step of the way."
+            </blockquote>
+          </div>
+          <div class="pt-4 border-t border-black/5 flex items-center justify-between text-xs text-[#57544E]">
+            <div>
+              <strong class="text-[#1F1F1F] block text-sm">Residential Acquisition</strong>
+              <span>Rancho Viejo, Santa Fe</span>
+            </div>
+            <span class="text-[#7E7970] font-medium">Broker: Marissa Tapia</span>
+          </div>
+        </div>
+
+        <!-- Review 5: Engineering & Due Diligence -->
+        <div class="neu-flat p-8 rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C5A059] tracking-wider text-base">★★★★★</div>
+              <span class="neu-inset px-3 py-1 rounded-full text-[11px] font-semibold text-[#B87333]">Adobe Structural Review</span>
+            </div>
+            <blockquote class="text-lg text-[#1F1F1F] font-serif-luxury italic leading-relaxed mb-6">
+              "Don Trujillo's engineering background saved us tens of thousands in hidden foundation and drainage remediation. You simply cannot put a price on brokers who truly know structural building science."
+            </blockquote>
+          </div>
+          <div class="pt-4 border-t border-black/5 flex items-center justify-between text-xs text-[#57544E]">
+            <div>
+              <strong class="text-[#1F1F1F] block text-sm">David & Elena M.</strong>
+              <span>Eldorado Estate Owners</span>
+            </div>
+            <span class="text-[#7E7970] font-medium">Broker: Don Trujillo</span>
+          </div>
+        </div>
+
+        <!-- Review 6: Education & Patient Advocacy -->
+        <div class="neu-flat p-8 rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[#C5A059] tracking-wider text-base">★★★★★</div>
+              <span class="neu-inset px-3 py-1 rounded-full text-[11px] font-semibold text-[#B87333]">Family Estate Sale</span>
+            </div>
+            <blockquote class="text-lg text-[#1F1F1F] font-serif-luxury italic leading-relaxed mb-6">
+              "Donna Sanchez-Zubia and Marcos guided our family through an emotional estate probate sale with immense compassion, discretion, and market precision. We felt protected and valued at all times."
+            </blockquote>
+          </div>
+          <div class="pt-4 border-t border-black/5 flex items-center justify-between text-xs text-[#57544E]">
+            <div>
+              <strong class="text-[#1F1F1F] block text-sm">The Martinez Family</strong>
+              <span>South Capitol, Santa Fe</span>
+            </div>
+            <span class="text-[#7E7970] font-medium">Brokers: Donna & Marcos Zubia</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Call to Action Banner -->
+      <div class="neu-flat p-8 sm:p-12 rounded-3xl text-center max-w-4xl mx-auto">
+        <h3 class="text-2xl sm:text-3xl font-semibold text-[#1F1F1F] mb-4">
+          Ready for Unmatched Representation?
+        </h3>
+        <p class="text-[#57544E] text-sm sm:text-base max-w-xl mx-auto mb-6">
+          Whether you are considering selling an architectural estate or seeking your dream Santa Fe home, contact our brokers for a confidential consultation.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="tel:5057097800" class="btn-bronze px-8 py-3 rounded-full text-xs font-semibold inline-flex items-center gap-2">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            <span>Call (505) 709-7800</span>
+          </a>
+          <a href="contact.html" class="neu-button px-7 py-3 rounded-full text-xs font-semibold">
+            Submit Private Inquiry
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       GLOBAL NEUMORPHIC FOOTER & COMPLIANCE
+       ========================================================================= -->
+  <footer class="bg-[#DFD9CE] border-t border-white/70 pt-16 pb-12">
+    <div class="container-luxury">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+        <div>
+          <div class="text-xl font-semibold tracking-wide text-[#1F1F1F] mb-4">Origins Realty Group</div>
+          <p class="text-xs text-[#57544E] leading-relaxed mb-4">
+            Boutique real estate brokerage deeply rooted in Santa Fe traditions, architecture, and luxury residential living across Northern New Mexico.
+          </p>
+          <div class="text-xs text-[#7E7970]">
+            Santa Fe, NM 87592
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-[#1F1F1F] mb-4">Explore</h4>
+          <ul class="space-y-2 text-xs text-[#57544E]">
+            <li><a href="index.html" class="hover:text-[#B87333] transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-[#B87333] transition-colors">About Our Heritage</a></li>
+            <li><a href="properties.html" class="hover:text-[#B87333] transition-colors">Luxury Portfolio</a></li>
+            <li><a href="communities.html" class="hover:text-[#B87333] transition-colors">Regional Guides</a></li>
+            <li><a href="team.html" class="hover:text-[#B87333] transition-colors">Meet the Team</a></li>
+            <li><a href="testimonials.html" class="hover:text-[#B87333] transition-colors font-semibold text-[#B87333]">Client Reviews</a></li>
+            <li><a href="contact.html" class="hover:text-[#B87333] transition-colors">Contact & Inquiries</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-[#1F1F1F] mb-4">Direct Brokerage</h4>
+          <ul class="space-y-2.5 text-xs text-[#57544E]">
+            <li>
+              <span class="text-[#7E7970] block">Primary Phone:</span>
+              <a href="tel:5057097800" class="font-semibold text-[#1F1F1F] hover:text-[#B87333] transition-colors">(505) 709-7800</a>
+            </li>
+            <li>
+              <span class="text-[#7E7970] block">Secondary Line:</span>
+              <a href="tel:5053104412" class="font-semibold text-[#1F1F1F] hover:text-[#B87333] transition-colors">(505) 310-4412</a>
+            </li>
+            <li>
+              <span class="text-[#7E7970] block">Location:</span>
+              <span>Santa Fe, Northern NM</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-[#1F1F1F] mb-4">Brokerage Compliance</h4>
+          <div class="neu-flat p-4 rounded-2xl text-[11px] text-[#57544E] leading-relaxed mb-3">
+            <div class="flex items-center gap-2 mb-2 font-semibold text-[#1F1F1F]">
+              <svg class="w-4 h-4 text-[#B87333]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/>
+              </svg>
+              <span>Equal Housing Opportunity</span>
+            </div>
+            All real estate advertised herein is subject to the Federal Fair Housing Act. Licensed by the New Mexico Real Estate Commission (NMREC).
+          </div>
+          <p class="text-[11px] text-[#7E7970]">
+            Olga C'de Baca, Qualifying Broker / Owner (NM Lic #15136).
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-black/5 flex flex-col sm:flex-row items-center justify-between text-xs text-[#7E7970] gap-4">
+        <div>
+          &copy; 2026 Origins Realty Group. All rights reserved. Santa Fe, NM.
+        </div>
+        <div class="flex items-center space-x-6">
+          <span>Privacy Policy</span>
+          <span>Terms of Brokerage</span>
+          <span>NMREC Compliance</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       CONSULTATION MODAL & MOBILE DRAWER
+       ========================================================================= -->
+  <div id="consultation-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container p-6 sm:p-8 max-w-lg">
+      <div class="flex items-center justify-between pb-3 border-b border-black/5 mb-5">
+        <h3 class="text-xl font-bold text-[#1F1F1F]">Schedule Private Consultation</h3>
+        <button type="button" class="close-consult-btn w-8 h-8 rounded-full neu-flat-sm flex items-center justify-center text-[#1F1F1F] hover:text-[#B87333] transition-colors" aria-label="Close modal">
+          ✕
+        </button>
+      </div>
+
+      <p class="text-xs text-[#57544E] mb-5">
+        Connect directly with Olga C'de Baca or one of our licensed Northern New Mexico associate brokers for private representation, valuation, or acquisition.
+      </p>
+
+      <div class="neu-inset p-4 rounded-2xl mb-5 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-[#7E7970]">Direct Cell / Office:</span>
+          <a href="tel:5057097800" class="text-sm font-bold text-[#B87333] hover:underline">(505) 709-7800</a>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-[#7E7970]">Secondary Broker Line:</span>
+          <a href="tel:5053104412" class="text-sm font-bold text-[#1F1F1F] hover:underline">(505) 310-4412</a>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-[#7E7970]">Brokerage License:</span>
+          <span class="text-xs font-medium text-stone-700">NM Lic #15136</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <a href="tel:5057097800" class="w-full py-3 rounded-xl btn-bronze font-medium text-xs flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          <span>Call (505) 709-7800 Now</span>
+        </a>
+        <a href="contact.html" class="w-full py-3 rounded-xl neu-button text-xs font-semibold flex items-center justify-center">
+          Open Full Inquiry Form
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="drawer-backdrop" class="drawer-backdrop"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="flex items-center justify-between mb-8 pb-4 border-b border-black/5">
+      <span class="font-semibold text-lg text-[#1F1F1F]">Origins Realty</span>
+      <button type="button" class="close-drawer-btn w-8 h-8 rounded-full neu-flat-sm flex items-center justify-center text-[#1F1F1F]">
+        ✕
+      </button>
+    </div>
+
+    <nav class="flex flex-col space-y-4 text-base font-medium text-[#1F1F1F]">
+      <a href="index.html" class="hover:text-[#B87333] transition-colors py-1">Home</a>
+      <a href="about.html" class="hover:text-[#B87333] transition-colors py-1">About Us</a>
+      <a href="properties.html" class="hover:text-[#B87333] transition-colors py-1">Properties</a>
+      <a href="communities.html" class="hover:text-[#B87333] transition-colors py-1">Communities</a>
+      <a href="team.html" class="hover:text-[#B87333] transition-colors py-1">Our Team</a>
+      <a href="testimonials.html" class="text-[#B87333] font-semibold py-1">Reviews</a>
+      <a href="contact.html" class="hover:text-[#B87333] transition-colors py-1">Contact</a>
+    </nav>
+
+    <div class="mt-auto pt-6 border-t border-black/5 space-y-3">
+      <a href="tel:5057097800" class="w-full py-3 rounded-xl btn-bronze text-center text-xs font-semibold block">
+        Direct Call: (505) 709-7800
+      </a>
+      <p class="text-[11px] text-[#7E7970] text-center">
+        Santa Fe, Northern New Mexico
+      </p>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Properties Portfolio | Origins Realty Group — Santa Fe Luxury Real Estate</title>
+  <meta name="description" content="Explore current luxury listings and distinguished past sales across Santa Fe, NM. From historic Eastside adobes to private equestrian ranches.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Luxury Neumorphic Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Lenis Smooth Scroll CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-[#EBE7DF] text-[#1F1F1F] selection:bg-[#B87333] selection:text-white">
+
+  <!-- =========================================================================
+       SUBPAGE NAVIGATION BAR
+       ========================================================================= -->
+  <header class="w-full pt-5 sm:pt-6 sticky top-0 z-40 transition-all duration-300">
+    <div class="container-luxury">
+      <nav id="main-navbar" class="w-full flex items-center justify-between px-6 sm:px-8 py-3.5 sm:py-4 rounded-full nav-floating-pill">
+        <!-- Logo -->
+        <a href="index.html" class="nav-logo text-[#1F1F1F] font-semibold text-xl sm:text-2xl tracking-wide select-none">
+          Origins Realty
+        </a>
+
+        <!-- Desktop Navigation Items -->
+        <div class="hidden lg:flex items-center space-x-7 xl:space-x-8">
+          <a href="index.html" class="nav-link text-[14px] font-normal text-stone-700 hover:text-stone-900 transition-colors">Home</a>
+          <a href="about.html" class="nav-link text-[14px] font-normal text-stone-700 hover:text-stone-900 transition-colors">About Us</a>
+          <a href="properties.html" class="nav-link text-[14px] font-semibold text-[#B87333] border-b-2 border-[#B87333] pb-0.5">Properties</a>
+          <a href="communities.html" class="nav-link text-[14px] font-normal text-stone-700 hover:text-stone-900 transition-colors">Communities</a>
+          <a href="team.html" class="nav-link text-[14px] font-normal text-stone-700 hover:text-stone-900 transition-colors">Our Team</a>
+          <a href="testimonials.html" class="nav-link text-[14px] font-normal text-stone-700 hover:text-stone-900 transition-colors">Reviews</a>
+          <a href="contact.html" class="nav-link text-[14px] font-normal text-stone-700 hover:text-stone-900 transition-colors">Contact</a>
+        </div>
+
+        <!-- Right-side Action: Schedule Consultation -->
+        <div class="hidden sm:flex items-center space-x-4">
+          <a href="#consultation-modal" class="nav-consult-btn inline-flex items-center gap-2 border border-stone-400 text-stone-900 text-[14px] font-normal px-5 py-2 rounded-full transition-all duration-300 hover:bg-[#1F1F1F] hover:text-white shadow-sm">
+            <span>Schedule Consultation</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button type="button" class="mobile-menu-btn open-drawer-btn lg:hidden text-stone-900 p-2 focus:outline-none" aria-label="Open Navigation">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       PAGE HEADER & FILTER CONTROLS
+       ========================================================================= -->
+  <section class="pt-16 pb-8 text-center">
+    <div class="container-luxury">
+      <span class="text-xs uppercase tracking-[0.25em] font-semibold text-[#B87333] mb-3 inline-block">
+        Origins Realty Group • Exclusive Portfolio
+      </span>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#1F1F1F] leading-tight mb-4">
+        Santa Fe Luxury Properties
+      </h1>
+      <p class="text-[#57544E] text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-light mb-10">
+        Representing distinguished authentic adobes, sweeping equestrian estates, and architectural compounds across Northern New Mexico.
+      </p>
+
+      <!-- Tactile Neumorphic Filter Chips Bar -->
+      <div class="flex items-center justify-center gap-3 sm:gap-4 mb-10">
+        <button class="filter-chip active" data-filter="all">All Properties</button>
+        <button class="filter-chip" data-filter="for-sale">For Sale</button>
+        <button class="filter-chip" data-filter="sold">Sold & Represented</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       COMPREHENSIVE PROPERTY PORTFOLIO GRID (3D TILT CARDS)
+       ========================================================================= -->
+  <section class="section-spacing pt-0">
+    <div class="container-luxury">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- 1. 616 Camino Rancheros (FOR SALE) -->
+        <div class="neu-flat rounded-3xl p-5 tilt-card cursor-pointer group" data-listing-status="for-sale" data-property-trigger="616-camino-rancheros">
+          <div class="neu-img-frame aspect-[16/10] mb-5 relative">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="616 Camino Rancheros" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 px-3 py-1 text-xs font-semibold rounded-full badge-gold tilt-badge shadow-sm">
+              FOR SALE
+            </span>
+            <span class="absolute bottom-3 right-3 px-3 py-1 text-xs font-medium rounded-full bg-black/50 text-white backdrop-blur-sm">
+              Historic Eastside
+            </span>
+          </div>
+          <div class="tilt-inner">
+            <h3 class="text-xl font-semibold text-[#1F1F1F] group-hover:text-[#B87333] transition-colors mb-1">
+              616 Camino Rancheros
+            </h3>
+            <p class="text-2xl font-bold text-[#B87333] mb-2">$1,320,000</p>
+            <p class="text-xs text-[#7E7970] mb-4">Santa Fe, NM 87505</p>
+            
+            <div class="flex items-center justify-between text-xs text-[#57544E] py-3 border-t border-black/5 mb-2">
+              <span><strong>3</strong> BD</span>
+              <span><strong>2</strong> BA</span>
+              <span><strong>2,377</strong> Sq. Ft.</span>
+              <span class="text-[#B87333] font-medium">Cellar / Studio</span>
+            </div>
+
+            <p class="text-xs text-[#57544E] line-clamp-2 mb-4 leading-relaxed">
+              Authentic adobe details, high wood beam vigas, kiva fireplaces, and an extraordinarily rare unfinished basement level primed for a wine cellar or artist studio.
+            </p>
+
+            <button class="w-full py-2.5 rounded-xl neu-button text-xs font-semibold flex items-center justify-center gap-1.5">
+              <span>View Architectural Details</span>
+              <svg class="w-3.5 h-3.5 text-[#B87333]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. 11 Via de Las Yeguas (SOLD) -->
+        <div class="neu-flat rounded-3xl p-5 tilt-card cursor-pointer group" data-listing-status="sold" data-property-trigger="11-via-de-las-yeguas">
+          <div class="neu-img-frame aspect-[16/10] mb-5 relative">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="11 Via de Las Yeguas" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 px-3 py-1 text-xs font-semibold rounded-full badge-sold tilt-badge">
+              SOLD
+            </span>
+            <span class="absolute bottom-3 right-3 px-3 py-1 text-xs font-medium rounded-full bg-black/50 text-white backdrop-blur-sm">
+              Equestrian Estate
+            </span>
+          </div>
+          <div class="tilt-inner">
+            <h3 class="text-xl font-semibold text-[#1F1F1F] group-hover:text-[#B87333] transition-colors mb-1">
+              11 Via de Las Yeguas
+            </h3>
+            <p class="text-xl font-semibold text-[#57544E] mb-2">Luxury Equestrian Estate</p>
+            <p class="text-xs text-[#7E7970] mb-4">Santa Fe, NM 87506</p>
+            
+            <div class="flex items-center justify-between text-xs text-[#57544E] py-3 border-t border-black/5 mb-2">
+              <span><strong>4</strong> BD</span>
+              <span><strong>5</strong> BA</span>
+              <span><strong>4,890</strong> Sq. Ft.</span>
+              <span class="text-stone-600 font-medium">5.2 Acres</span>
+            </div>
+
+            <p class="text-xs text-[#57544E] line-clamp-2 mb-4 leading-relaxed">
+              Luxury equestrian estate with private horse barn, guest casita, and panoramic Sangre de Cristo mountain views. Masterfully closed by Origins.
+            </p>
+
+            <button class="w-full py-2.5 rounded-xl neu-button text-xs font-semibold flex items-center justify-center gap-1.5">
+              <span>View Architectural Details</span>
+              <svg class="w-3.5 h-3.5 text-[#B87333]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. 408 Camino del Monte Sol (SOLD) -->
+        <div class="neu-flat rounded-3xl p-5 tilt-card cursor-pointer group" data-listing-status="sold" data-property-trigger="408-camino-del-monte-sol">
+          <div class="neu-img-frame aspect-[16/10] mb-5 relative">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80" alt="408 Camino del Monte Sol" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 px-3 py-1 text-xs font-semibold rounded-full badge-sold tilt-badge">
+              SOLD
+            </span>
+            <span class="absolute bottom-3 right-3 px-3 py-1 text-xs font-medium rounded-full bg-black/50 text-white backdrop-blur-sm">
+              Historic Art Colony
+            </span>
+          </div>
+          <div class="tilt-inner">
+            <h3 class="text-xl font-semibold text-[#1F1F1F] group-hover:text-[#B87333] transition-colors mb-1">
+              408 Camino del Monte Sol
+            </h3>
+            <p class="text-xl font-semibold text-[#57544E] mb-2">Historic Compound</p>
+            <p class="text-xs text-[#7E7970] mb-4">Santa Fe, NM 87505</p>
+            
+            <div class="flex items-center justify-between text-xs text-[#57544E] py-3 border-t border-black/5 mb-2">
+              <span><strong>4</strong> BD</span>
+              <span><strong>3</strong> BA</span>
+              <span><strong>3,198</strong> Sq. Ft.</span>
+              <span class="text-stone-600 font-medium">Art Studio</span>
+            </div>
+
+            <p class="text-xs text-[#57544E] line-clamp-2 mb-4 leading-relaxed">
+              Historic Eastside compound with Saltillo tile, antique architectural woodwork, multiple kiva fireplaces, and private walled gardens.
+            </p>
+
+            <button class="w-full py-2.5 rounded-xl neu-button text-xs font-semibold flex items-center justify-center gap-1.5">
+              <span>View Architectural Details</span>
+              <svg class="w-3.5 h-3.5 text-[#B87333]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. 1047 Camino San Acacio A (SOLD) -->
+        <div class="neu-flat rounded-3xl p-5 tilt-card cursor-pointer group" data-listing-status="sold" data-property-trigger="1047-camino-san-acacio">
+          <div class="neu-img-frame aspect-[16/10] mb-5 relative">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80" alt="1047 Camino San Acacio A" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 px-3 py-1 text-xs font-semibold rounded-full badge-sold tilt-badge">
+              SOLD
+            </span>
+            <span class="absolute bottom-3 right-3 px-3 py-1 text-xs font-medium rounded-full bg-black/50 text-white backdrop-blur-sm">
+              Museum Hill Enclave
+            </span>
+          </div>
+          <div class="tilt-inner">
+            <h3 class="text-xl font-semibold text-[#1F1F1F] group-hover:text-[#B87333] transition-colors mb-1">
+              1047 Camino San Acacio A
+            </h3>
+            <p class="text-xl font-semibold text-[#57544E] mb-2">Pueblo Revival Masterwork</p>
+            <p class="text-xs text-[#7E7970] mb-4">Santa Fe, NM 87505</p>
+            
+            <div class="flex items-center justify-between text-xs text-[#57544E] py-3 border-t border-black/5 mb-2">
+              <span><strong>2</strong> BD</span>
+              <span><strong>2</strong> BA</span>
+              <span><strong>2,711</strong> Sq. Ft.</span>
+              <span class="text-stone-600 font-medium">Double-Height</span>
+            </div>
+
+            <p class="text-xs text-[#57544E] line-clamp-2 mb-4 leading-relaxed">
+              Quiet Museum Hill enclave with soaring viga ceilings, artisan plaster, open concept entertaining kitchen, and scenic sunrise terrace.
+            </p>
+
+            <button class="w-full py-2.5 rounded-xl neu-button text-xs font-semibold flex items-center justify-center gap-1.5">
+              <span>View Architectural Details</span>
+              <svg class="w-3.5 h-3.5 text-[#B87333]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 5. 62 Avenida Frijoles (SOLD) -->
+        <div class="neu-flat rounded-3xl p-5 tilt-card cursor-pointer group" data-listing-status="sold" data-property-trigger="62-avenida-frijoles">
+          <div class="neu-img-frame aspect-[16/10] mb-5 relative">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80" alt="62 Avenida Frijoles" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 px-3 py-1 text-xs font-semibold rounded-full badge-sold tilt-badge">
+              SOLD
+            </span>
+            <span class="absolute bottom-3 right-3 px-3 py-1 text-xs font-medium rounded-full bg-black/50 text-white backdrop-blur-sm">
+              Rancho Viejo
+            </span>
+          </div>
+          <div class="tilt-inner">
+            <h3 class="text-xl font-semibold text-[#1F1F1F] group-hover:text-[#B87333] transition-colors mb-1">
+              62 Avenida Frijoles
+            </h3>
+            <p class="text-xl font-semibold text-[#57544E] mb-2">Contemporary Pueblo</p>
+            <p class="text-xs text-[#7E7970] mb-4">Santa Fe, NM 87507</p>
+            
+            <div class="flex items-center justify-between text-xs text-[#57544E] py-3 border-t border-black/5 mb-2">
+              <span><strong>3</strong> BD</span>
+              <span><strong>3</strong> BA</span>
+              <span><strong>2,571</strong> Sq. Ft.</span>
+              <span class="text-stone-600 font-medium">Community Trails</span>
+            </div>
+
+            <p class="text-xs text-[#57544E] line-clamp-2 mb-4 leading-relaxed">
+              Contemporary single-level living in Rancho Viejo. Thoughtful split floor plan, covered portal, and direct access to expansive walking trails.
+            </p>
+
+            <button class="w-full py-2.5 rounded-xl neu-button text-xs font-semibold flex items-center justify-center gap-1.5">
+              <span>View Architectural Details</span>
+              <svg class="w-3.5 h-3.5 text-[#B87333]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 6. 6 Ute Lane (SOLD) -->
+        <div class="neu-flat rounded-3xl p-5 tilt-card cursor-pointer group" data-listing-status="sold" data-property-trigger="6-ute-lane">
+          <div class="neu-img-frame aspect-[16/10] mb-5 relative">
+            <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=1000&q=80" alt="6 Ute Lane" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 px-3 py-1 text-xs font-semibold rounded-full badge-sold tilt-badge">
+              SOLD
+            </span>
+            <span class="absolute bottom-3 right-3 px-3 py-1 text-xs font-medium rounded-full bg-black/50 text-white backdrop-blur-sm">
+              South Capitol Enclave
+            </span>
+          </div>
+          <div class="tilt-inner">
+            <h3 class="text-xl font-semibold text-[#1F1F1F] group-hover:text-[#B87333] transition-colors mb-1">
+              6 Ute Lane
+            </h3>
+            <p class="text-xl font-semibold text-[#57544E] mb-2">Classic South Capitol</p>
+            <p class="text-xs text-[#7E7970] mb-4">Santa Fe, NM 87505</p>
+            
+            <div class="flex items-center justify-between text-xs text-[#57544E] py-3 border-t border-black/5 mb-2">
+              <span><strong>3</strong> BD</span>
+              <span><strong>3</strong> BA</span>
+              <span><strong>2,350</strong> Sq. Ft.</span>
+              <span class="text-stone-600 font-medium">Walk to Capitol</span>
+            </div>
+
+            <p class="text-xs text-[#57544E] line-clamp-2 mb-4 leading-relaxed">
+              Idyllic South Capitol residence walking distance to schools and downtown. Features secluded courtyard oasis and detached guest quarters.
+            </p>
+
+            <button class="w-full py-2.5 rounded-xl neu-button text-xs font-semibold flex items-center justify-center gap-1.5">
+              <span>View Architectural Details</span>
+              <svg class="w-3.5 h-3.5 text-[#B87333]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       GLOBAL NEUMORPHIC FOOTER & COMPLIANCE
+       ========================================================================= -->
+  <footer class="bg-[#DFD9CE] border-t border-white/70 pt-16 pb-12">
+    <div class="container-luxury">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+        <div>
+          <div class="text-xl font-semibold tracking-wide text-[#1F1F1F] mb-4">Origins Realty Group</div>
+          <p class="text-xs text-[#57544E] leading-relaxed mb-4">
+            Boutique real estate brokerage deeply rooted in Santa Fe traditions, architecture, and luxury residential living across Northern New Mexico.
+          </p>
+          <div class="text-xs text-[#7E7970]">
+            Santa Fe, NM 87592
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-[#1F1F1F] mb-4">Explore</h4>
+          <ul class="space-y-2 text-xs text-[#57544E]">
+            <li><a href="index.html" class="hover:text-[#B87333] transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-[#B87333] transition-colors">About Our Heritage</a></li>
+            <li><a href="properties.html" class="hover:text-[#B87333] transition-colors font-semibold text-[#B87333]">Luxury Portfolio</a></li>
+            <li><a href="communities.html" class="hover:text-[#B87333] transition-colors">Regional Guides</a></li>
+            <li><a href="team.html" class="hover:text-[#B87333] transition-colors">Meet the Team</a></li>
+            <li><a href="testimonials.html" class="hover:text-[#B87333] transition-colors">Client Reviews</a></li>
+            <li><a href="contact.html" class="hover:text-[#B87333] transition-colors">Contact & Inquiries</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-[#1F1F1F] mb-4">Direct Brokerage</h4>
+          <ul class="space-y-2.5 text-xs text-[#57544E]">
+            <li>
+              <span class="text-[#7E7970] block">Primary Phone:</span>
+              <a href="tel:5057097800" class="font-semibold text-[#1F1F1F] hover:text-[#B87333] transition-colors">(505) 709-7800</a>
+            </li>
+            <li>
+              <span class="text-[#7E7970] block">Secondary Line:</span>
+              <a href="tel:5053104412" class="font-semibold text-[#1F1F1F] hover:text-[#B87333] transition-colors">(505) 310-4412</a>
+            </li>
+            <li>
+              <span class="text-[#7E7970] block">Location:</span>
+              <span>Santa Fe, Northern NM</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-[#1F1F1F] mb-4">Brokerage Compliance</h4>
+          <div class="neu-flat p-4 rounded-2xl text-[11px] text-[#57544E] leading-relaxed mb-3">
+            <div class="flex items-center gap-2 mb-2 font-semibold text-[#1F1F1F]">
+              <svg class="w-4 h-4 text-[#B87333]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/>
+              </svg>
+              <span>Equal Housing Opportunity</span>
+            </div>
+            All real estate advertised herein is subject to the Federal Fair Housing Act. Licensed by the New Mexico Real Estate Commission (NMREC).
+          </div>
+          <p class="text-[11px] text-[#7E7970]">
+            Olga C'de Baca, Qualifying Broker / Owner (NM Lic #15136).
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-black/5 flex flex-col sm:flex-row items-center justify-between text-xs text-[#7E7970] gap-4">
+        <div>
+          &copy; 2026 Origins Realty Group. All rights reserved. Santa Fe, NM.
+        </div>
+        <div class="flex items-center space-x-6">
+          <span>Privacy Policy</span>
+          <span>Terms of Brokerage</span>
+          <span>NMREC Compliance</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       PROPERTY DETAILS MODAL (INTERACTIVE)
+       ========================================================================= -->
+  <div id="property-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container p-6 sm:p-8">
+      <div class="flex items-center justify-between pb-4 border-b border-black/5 mb-6">
+        <div>
+          <span id="modal-prop-status" class="px-3 py-1 text-xs font-semibold rounded-full badge-gold">FOR SALE</span>
+          <h3 id="modal-prop-title" class="text-2xl font-bold text-[#1F1F1F] mt-2">616 Camino Rancheros</h3>
+          <p id="modal-prop-location" class="text-xs text-[#7E7970]">Santa Fe, NM 87505</p>
+        </div>
+        <button type="button" class="close-modal-btn w-9 h-9 rounded-full neu-flat-sm flex items-center justify-center text-[#1F1F1F] hover:text-[#B87333] transition-colors" aria-label="Close modal">
+          ✕
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-6">
+        <div class="md:col-span-7">
+          <div class="neu-img-frame aspect-[16/10] rounded-2xl overflow-hidden mb-3">
+            <img id="modal-prop-image" src="" alt="Property" class="w-full h-full object-cover">
+          </div>
+          <div class="text-3xl font-bold text-[#B87333] mb-4" id="modal-prop-price">$1,320,000</div>
+          <p id="modal-prop-desc" class="text-sm text-[#57544E] leading-relaxed mb-4"></p>
+        </div>
+
+        <div class="md:col-span-5 flex flex-col justify-between">
+          <div class="neu-inset p-5 rounded-2xl mb-4">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-[#1F1F1F] mb-3">Property Overview</h4>
+            <div class="grid grid-cols-3 gap-2 text-center pb-3 border-b border-black/5 mb-3">
+              <div>
+                <span class="block text-xs text-[#7E7970]">Bedrooms</span>
+                <span id="modal-prop-beds" class="text-sm font-bold text-[#1F1F1F]">3 BD</span>
+              </div>
+              <div>
+                <span class="block text-xs text-[#7E7970]">Bathrooms</span>
+                <span id="modal-prop-baths" class="text-sm font-bold text-[#1F1F1F]">2 BA</span>
+              </div>
+              <div>
+                <span class="block text-xs text-[#7E7970]">Total Area</span>
+                <span id="modal-prop-sqft" class="text-sm font-bold text-[#1F1F1F]">2,377 Sq. Ft.</span>
+              </div>
+            </div>
+            
+            <h5 class="text-xs font-bold uppercase tracking-wider text-[#1F1F1F] mb-2">Architectural Highlights</h5>
+            <ul id="modal-prop-features" class="space-y-1 text-xs text-[#57544E]">
+            </ul>
+          </div>
+
+          <div class="space-y-2">
+            <a href="tel:5057097800" class="w-full py-3 rounded-xl btn-bronze font-medium text-xs flex items-center justify-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              <span>Call Broker: (505) 709-7800</span>
+            </a>
+            <a href="contact.html" class="w-full py-2.5 rounded-xl neu-button text-xs font-semibold flex items-center justify-center">
+              Send Written Inquiry
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       CONSULTATION MODAL & MOBILE DRAWER
+       ========================================================================= -->
+  <div id="consultation-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container p-6 sm:p-8 max-w-lg">
+      <div class="flex items-center justify-between pb-3 border-b border-black/5 mb-5">
+        <h3 class="text-xl font-bold text-[#1F1F1F]">Schedule Private Consultation</h3>
+        <button type="button" class="close-consult-btn w-8 h-8 rounded-full neu-flat-sm flex items-center justify-center text-[#1F1F1F] hover:text-[#B87333] transition-colors" aria-label="Close modal">
+          ✕
+        </button>
+      </div>
+
+      <p class="text-xs text-[#57544E] mb-5">
+        Connect directly with Olga C'de Baca or one of our licensed Northern New Mexico associate brokers for private representation, valuation, or acquisition.
+      </p>
+
+      <div class="neu-inset p-4 rounded-2xl mb-5 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-[#7E7970]">Direct Cell / Office:</span>
+          <a href="tel:5057097800" class="text-sm font-bold text-[#B87333] hover:underline">(505) 709-7800</a>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-[#7E7970]">Secondary Broker Line:</span>
+          <a href="tel:5053104412" class="text-sm font-bold text-[#1F1F1F] hover:underline">(505) 310-4412</a>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-[#7E7970]">Brokerage License:</span>
+          <span class="text-xs font-medium text-stone-700">NM Lic #15136</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <a href="tel:5057097800" class="w-full py-3 rounded-xl btn-bronze font-medium text-xs flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          <span>Call (505) 709-7800 Now</span>
+        </a>
+        <a href="contact.html" class="w-full py-3 rounded-xl neu-button text-xs font-semibold flex items-center justify-center">
+          Open Full Inquiry Form
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="drawer-backdrop" class="drawer-backdrop"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="flex items-center justify-between mb-8 pb-4 border-b border-black/5">
+      <span class="font-semibold text-lg text-[#1F1F1F]">Origins Realty</span>
+      <button type="button" class="close-drawer-btn w-8 h-8 rounded-full neu-flat-sm flex items-center justify-center text-[#1F1F1F]">
+        ✕
+      </button>
+    </div>
+
+    <nav class="flex flex-col space-y-4 text-base font-medium text-[#1F1F1F]">
+      <a href="index.html" class="hover:text-[#B87333] transition-colors py-1">Home</a>
+      <a href="about.html" class="hover:text-[#B87333] transition-colors py-1">About Us</a>
+      <a href="properties.html" class="text-[#B87333] font-semibold py-1">Properties</a>
+      <a href="communities.html" class="hover:text-[#B87333] transition-colors py-1">Communities</a>
+      <a href="team.html" class="hover:text-[#B87333] transition-colors py-1">Our Team</a>
+      <a href="testimonials.html" class="hover:text-[#B87333] transition-colors py-1">Reviews</a>
+      <a href="contact.html" class="hover:text-[#B87333] transition-colors py-1">Contact</a>
+    </nav>
+
+    <div class="mt-auto pt-6 border-t border-black/5 space-y-3">
+      <a href="tel:5057097800" class="w-full py-3 rounded-xl btn-bronze text-center text-xs font-semibold block">
+        Direct Call: (505) 709-7800
+      </a>
+      <p class="text-[11px] text-[#7E7970] text-center">
+        Santa Fe, Northern New Mexico
+      </p>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>

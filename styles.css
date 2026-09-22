@@ -1,0 +1,451 @@
+/* ==========================================================================
+   ORIGINS REALTY GROUP - LUXURY NEUMORPHIC DESIGN SYSTEM
+   Santa Fe & Northern New Mexico Ultra-Luxury Real Estate
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Adobe & Northern NM Earthy Color Palette */
+  --bg-primary: #EBE7DF;
+  --bg-secondary: #DFD9CE;
+  --bg-light: #F5F3EF;
+  --bg-surface: #E8E4DC;
+  --bg-card: #ECE8E0;
+  
+  /* Text Colors */
+  --text-primary: #1F1F1F;
+  --text-secondary: #57544E;
+  --text-muted: #7E7970;
+  --text-inverse: #FFFFFF;
+  
+  /* Luxury Accents */
+  --accent-bronze: #B87333;
+  --accent-gold: #C5A059;
+  --accent-terracotta: #A65A38;
+  --accent-warm-clay: #8C4828;
+  
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.6);
+  --border-dark-subtle: rgba(0, 0, 0, 0.05);
+
+  /* Dual-Light Neumorphic Shadows */
+  --neu-flat: 8px 8px 18px rgba(0, 0, 0, 0.08), -8px -8px 18px rgba(255, 255, 255, 0.85);
+  --neu-flat-sm: 4px 4px 10px rgba(0, 0, 0, 0.06), -4px -4px 10px rgba(255, 255, 255, 0.9);
+  --neu-hover: 12px 12px 24px rgba(0, 0, 0, 0.11), -12px -12px 24px rgba(255, 255, 255, 0.95);
+  --neu-elevated: 14px 14px 28px rgba(0, 0, 0, 0.12), -14px -14px 28px rgba(255, 255, 255, 1);
+  --neu-inset: inset 4px 4px 8px rgba(0, 0, 0, 0.09), inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+  --neu-inset-deep: inset 6px 6px 12px rgba(0, 0, 0, 0.12), inset -6px -6px 12px rgba(255, 255, 255, 0.95);
+  --neu-pill: 6px 6px 14px rgba(0, 0, 0, 0.07), -6px -6px 14px rgba(255, 255, 255, 0.85);
+}
+
+/* Global Reset & Base Typography */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: auto; /* Handled by Lenis smooth scroll */
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Global Hidden Browser Scrollbar for Cinematic Look */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE / Edge */
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+  width: 0;
+  height: 0;
+}
+
+/* Headings with Luxury Santa Fe Aesthetic */
+h1, h2, h3, h4, .font-serif-luxury {
+  font-family: 'Cinzel', Georgia, 'Times New Roman', serif;
+  letter-spacing: -0.01em;
+}
+
+/* Neumorphic Utility Classes */
+.neu-flat {
+  background: var(--bg-card);
+  box-shadow: var(--neu-flat);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neu-flat:hover {
+  box-shadow: var(--neu-hover);
+  transform: translateY(-2px);
+}
+
+.neu-flat-static {
+  background: var(--bg-card);
+  box-shadow: var(--neu-flat);
+  border: 1px solid var(--border-subtle);
+}
+
+.neu-flat-sm {
+  background: var(--bg-card);
+  box-shadow: var(--neu-flat-sm);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s ease;
+}
+
+.neu-inset {
+  background: var(--bg-surface);
+  box-shadow: var(--neu-inset);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.neu-inset-focus:focus {
+  outline: none;
+  box-shadow: var(--neu-inset-deep), 0 0 0 2px rgba(184, 115, 51, 0.35);
+  background: #E5E1D9;
+}
+
+.neu-button {
+  background: var(--bg-card);
+  box-shadow: var(--neu-flat-sm);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.neu-button:hover {
+  box-shadow: var(--neu-hover);
+  transform: translateY(-2px);
+  color: var(--accent-bronze);
+}
+
+.neu-button:active,
+.neu-button.active {
+  box-shadow: var(--neu-inset);
+  transform: translateY(1px);
+  color: var(--accent-bronze);
+  background: var(--bg-surface);
+}
+
+/* Primary Bronze CTA Button */
+.btn-bronze {
+  background: linear-gradient(135deg, #B87333 0%, #A05E26 100%);
+  color: #FFFFFF;
+  box-shadow: 6px 6px 16px rgba(160, 94, 38, 0.3), -4px -4px 12px rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.btn-bronze:hover {
+  background: linear-gradient(135deg, #C5A059 0%, #B87333 100%);
+  box-shadow: 8px 8px 22px rgba(160, 94, 38, 0.45), -6px -6px 16px rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-bronze:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.3), inset -3px -3px 6px rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   CONTAINER & RESPONSIVE LAYOUT SYSTEM
+   Max Width: 1500px fixed when > 1500px, fluid below.
+   Desktop (>991px): padding-inline: 30px
+   Tablet (<=991px): padding-inline: 20px
+   Mobile (<=767px): padding-inline: 15px
+   ========================================================================== */
+.container-luxury {
+  width: 100%;
+  max-width: 1500px;
+  margin-inline: auto;
+  padding-inline: 30px;
+}
+
+@media (max-width: 991px) {
+  .container-luxury {
+    padding-inline: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container-luxury {
+    padding-inline: 15px;
+  }
+}
+
+/* Consistent Vertical Section Spacing */
+.section-spacing {
+  padding-block: 6rem;
+}
+
+@media (max-width: 991px) {
+  .section-spacing {
+    padding-block: 4.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-spacing {
+    padding-block: 3.5rem;
+  }
+}
+
+/* Glass & Neumorphic Floating Pill Navbar */
+.nav-floating-pill {
+  background: rgba(235, 231, 223, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Hero Section: Editorial Architectural Showcase */
+.hero-editorial-section {
+  position: relative;
+  width: 100%;
+  background: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 85% 15%, rgba(197, 160, 89, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 10% 85%, rgba(184, 115, 51, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+  overflow: hidden;
+  padding-top: 1.5rem;
+  padding-bottom: 5rem;
+}
+
+@media (max-width: 991px) {
+  .hero-editorial-section {
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* Luxury Hero Search Console */
+.hero-search-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--neu-flat);
+  border-radius: 1.75rem;
+  transition: all 0.3s ease;
+}
+
+.hero-search-card:hover {
+  box-shadow: var(--neu-hover);
+}
+
+.search-tab-btn {
+  padding: 6px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  color: #57544E;
+  cursor: pointer;
+}
+
+.search-tab-btn.active {
+  background: #1F1F1F;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.search-input-box {
+  background: #E4E0D6;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.06), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+}
+
+.search-input-box:focus-within {
+  border-color: #B87333;
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.08), 0 0 0 2px rgba(184, 115, 51, 0.25);
+  background: #E0DBD0;
+}
+
+/* 3D Perspective Tilt Container */
+.tilt-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+.tilt-inner {
+  transform: translateZ(28px);
+}
+
+.tilt-badge {
+  transform: translateZ(42px);
+}
+
+/* Neumorphic Filter Chips */
+.filter-chip {
+  padding: 8px 20px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+  background: var(--bg-card);
+  box-shadow: var(--neu-flat-sm);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+.filter-chip:hover {
+  color: var(--accent-bronze);
+  transform: translateY(-1px);
+}
+
+.filter-chip.active {
+  background: var(--bg-surface);
+  box-shadow: var(--neu-inset);
+  color: var(--accent-bronze);
+  font-weight: 600;
+  border-color: rgba(184, 115, 51, 0.2);
+}
+
+/* Modal Backdrop & Container */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(24, 23, 22, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-container {
+  background: var(--bg-primary);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.2), -20px -20px 60px rgba(255, 255, 255, 0.9);
+  max-width: 820px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 1.5rem;
+  transform: scale(0.94) translateY(20px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  scrollbar-width: none;
+}
+
+.modal-container::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-backdrop.open .modal-container {
+  transform: scale(1) translateY(0);
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  max-width: 380px;
+  height: 100vh;
+  background: var(--bg-primary);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 2.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-drawer.open {
+  right: 0;
+}
+
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.drawer-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Custom Image Frame with Neumorphic Chamfer */
+.neu-img-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.neu-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.tilt-card:hover .neu-img-frame img {
+  transform: scale(1.05);
+}
+
+/* Metallic Badge Accent */
+.badge-gold {
+  background: linear-gradient(135deg, rgba(197, 160, 89, 0.25) 0%, rgba(184, 115, 51, 0.2) 100%);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  color: #8A5A1B;
+}
+
+.badge-sold {
+  background: rgba(87, 84, 78, 0.12);
+  border: 1px solid rgba(87, 84, 78, 0.25);
+  color: #57544E;
+}
+
+/* Lenis Specific Styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
