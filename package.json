@@ -1,0 +1,9 @@
+{
+  "name": "origins-realty-group",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ultra-Luxury Santa Fe & Northern New Mexico Real Estate Brokerage",
+  "scripts": {
+    "build": "echo Static build verified"
+  }
+}
